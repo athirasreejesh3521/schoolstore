@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+  <form method="post" id="indexForm" data-courses-url="{% url 'ajax_load_courses' %}" >
+    {% csrf_token %}
+    <label>CHOOSE THE DEPARTMENT:</label>
+    <select name="department" id="department" class="from-control">
+      <option value="">---Select Department---</option>
+      {% for i in department %}
+      <option value="{{i.id}}">{{i.department}}</option>
+      {% endfor %}
+    </select>
+    <br>
+    <label>CHOOSE THE COURSES:</label>
+    <select name="courses" id="courses" class="form-control">
+
+    </select>
+
+  </form>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    $("#department").change(function () {
+      var url = $("#indexForm").attr("data-courses-url");
+      var departmentId = $(this).val();
+
+      $.ajax({
+        url: url,
+        data: {
+          'department': departmentId
+        },
+        success: function (data) {
+          $("#courses").html(data);
+        }
+      });
+
+  </script>
+
+{% endblock %}

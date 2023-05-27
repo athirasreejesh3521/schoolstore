@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-9">
+
+    <title>ABC SCHOOL</title>
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <meta name="description" content="{% block metadescription %}{% endblock %}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<br>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+  <a class="navbar-brand" href="{% url 'homepage:home' %}">ABC School Store</a>
+  <button class="navbar-toggler" type="button"  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav_item active">
+        <a class="nav-link" href="{% url 'homepage:home' %}">Home </a>
+      </li>
+
+      <li class="nav_item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" >
+          Departments
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Computer_science">Computer Science</a>
+          <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Physics">Physics</a>
+          <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Biology">Biology Science</a>
+          <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Mathematics">Mathematics</a>
+          <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Chemistry">Chemistry</a>
+      </li>
+      <li class="nav_item" style = "position:absolute; left:1000px;">
+           <form class="form-inline" >
+        <a class="nav-link" href="{% url 'homepage:register' %}">Register</a>
+           </form>
+      </li>
+      <li class="nav_item justify-content-right" style = "position:absolute; left:925px;">
+          <form class="form-inline" >
+        <a class="nav-link" href="{% url 'homepage:login' %}">Login</a>
+
+          </form>
+      </li>
+
+
+
+  </ul>
+   </div>
+
+</nav>
+{% block content %}
+{% endblock %}
+</body>
+</html>

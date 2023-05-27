@@ -1,0 +1,16 @@
+
+{% extends 'regform.html' %}
+{% load static %}
+{% block content %}
+
+<dialog open>
+  <p> THANKS FOR YOUR KIND ATTENTION....WAIT TILL YOU RECIEVE FURTHER DETAIL!!!</p>
+    <center>
+        <a class="btn btn-warning" href="{% url 'homepage:home' %}">HOME</a>
+        <a class="btn btn-warning" href="{% url 'homepage:regform' %}">BACK</a>
+    </center>
+
+</dialog>
+
+
+{% endblock %}

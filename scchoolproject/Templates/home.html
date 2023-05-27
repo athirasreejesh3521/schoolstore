@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+    {% if category %}
+        {{category.description|truncatewords:155 }}
+    {% else %}
+        Welcome to ABC SCHOOL STORE
+    {% endif %}
+{% endblock %}
+{% block content %}
+<br>
+<div>
+ <img src="{% static 'img/ABCbanner.png' %}" style="width:1100px; height:500px;">
+</div>
+<div>
+    <p><h4><b><center>ABC SCHOOL </center> </b></h4> </p>
+    <p><h6>ABC School is one of the best places for any student to nurture their talents and get them to a good future. It provides a variety of
+        courses in relation with the subjects you are interested in.This is a very self esteemed institution and gives more focus on how to be
+        enthusisastic and focused in both studies as well as future life of the students. This institute was established since 1997 and has various prestigious
+        moments for moulding the future of thousands of good souls.
+  </h6>
+</div>
+<div class="row">
+  <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+    <div style="min-width:18rem;">
+      </p>
+      <h5><u>FACILITIES</u></h5>
+      <h6>* Trained Faculties</h6>
+      <h6>* Excellent Infrastructure </h6>
+      <h6>* Best Co-Curricular Activities</h6>
+      <h6>* Great Lab Facility</h6>
+      <h6>* Online and offline stores</h6>
+      <h6>* Affordable fee structure</h6>
+      <h6>* Best Placements</h6>
+      </p>
+    </div>
+  </div>
+</div>
+
+  <div>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+        <div>
+            <p>
+                <h5><u>DEPARTMENTS OF STUDY</u></h5>
+                <h6>* Computer Science</h6>
+                <h6>* Chemistry</h6>
+                <h6>* Mathematics</h6>
+                <h6>* Biology Science</h6>
+                <h6>* Physics</h6>
+            </p>
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-7">
+        <div style="min-width:18rem;">
+
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <div>
+                    <p>
+                        <h5><u>HEAD OF THE DEPARTMENT</u></h5>
+                        <img src="{% static 'img/head.jpg' %}" style="width:100px; height:100px;">
+                        <h5>SURESH KUMAR P</h5>
+                        <h6>Principal</h6>
+                        <h6>ABC school,Palakkad</h6>
+                    </p>
+                </div>
+            </div>
+
+    <div>
+      </p>
+        <h5><u>Contact</u></h5>
+        <h6>Email id :    abcschool1997@gmail.com</h6>
+        <h6>ADDRESS :     <justify>Near BSNL office,MG Road, Palakkad</justify></h6>
+        <h6>PINCODE :     679235</h6>
+        <h6>CONTACT :     9898754210</h6>
+        <h6>STORE CONTACT :       0466-259342</h6>
+     </p>
+    </div>
+  </div>
+ </div>
+</div>
+
+{% endblock %}
+
+

@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+<center>
+  {% csrf_token %}
+  <br>
+  <h6>ENTER THE NAME :  <input type="text" name="type" placeholder="NAME"><br></h6><br>
+  <h6>ENTER THE DOB :  <input type="date" name="DOB" placeholder="dd/mm/yyyy"><br></h6><br>
+
+  <h6>ENTER THE AGE :  <input type="text" name="age" placeholder="AGE AS ON 01/01/2023"></h6><br>
+
+  <h6><label for="gender">CHOOSE A GENDER:</label>
+    <select name="gender" id="gender">
+      <option value="Select">Select</option>
+      <option value="female">MALE</option>
+      <option value="male">FEMALE</option>
+      <option value="transgender">TRANSGENDER</option>
+    </select>
+  </h6><br>
+
+  <h6>ENTER THE PHONE NUMBER : <input type="text" name="country code"  value="+91" size="2"/> <input type="text" name="phone" size="10"/></h6><br>
+  <h6>ENTER THE MAIL ID :  <input type="email" name="email" placeholder="EMAIL ID"></h6><br>
+
+    <label><h6>ENTER THE ADDRESS : </h6> </label><h6><textarea cols="80" rows="5" value="address">
+</textarea></h6><br>
+
+  <h6>ENTER THE PINCODE :  <input type="text" name="pincode" placeholder="PINCODE"></h6><br>
+
+
+    <form method="post" id="indexForm" >
+    {% csrf_token %}
+        <label><h6>CHOOSE THE DEPARTMENT:</h6></label>
+    <select name="department" id="department" class="from-control">
+      <option value="">---Select Department---</option>
+
+      <option value="">Computer Science</option>
+      <option value="">Chemistry</option>
+      <option value="">Mathematics</option>
+      <option value="">Physics</option>
+      <option value="">Biology science</option>
+
+
+    </select>
+
+    </form>
+
+
+
+<br><br>
+
+  <h6><label for="purpose">CHOOSE A PURPOSE:</label>
+    <select name="purpose" id="purpose">
+      <option value="Select">Select</option>
+      <option value="Order">Place Order</option>
+      <option value="Enquiry">Enquiry</option>
+      <option value="Return">Return</option>
+      <option value="Feedback">Feedback</option>
+    </select>
+  </h6><br>
+
+  <h6>ENTER THE MATERIALS :<br>
+
+    <form action="/action_page.php">
+
+      <input type="checkbox">   Notebook<br>
+      <input type="checkbox">   Pen<br>
+      <input type="checkbox">   Textbooks<br>
+      <input type="checkbox">   Exam papers<br>
+      <input type="checkbox">   A4 Sheets<br>
+      <input type="checkbox">   Notepads<br>
+      <input type="checkbox">   Geometry Box<br>
+      <input type="checkbox">   Marker<br>
+      <input type="checkbox">   Scale<br>
+      <input type="checkbox">   File<br>
+
+    </form>
+
+  </h6><br>
+
+  <a class="btn btn-warning" href="{% url 'homepage:confirm' %}">SUBMIT</a>
+  <a class="btn btn-warning" href="{% url 'homepage:home' %}">LOGOUT</a>
+</center>
+</form>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<option value="">---Select Courses---</option>
+{% for course in courses %}
+<option value="{{course.id }}">{{course.courses}}</option>
+{% endfor %}
+
+{% endblock %}
